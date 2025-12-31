@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Areesha 2.0 Chat Bot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1 class="title">Welcome to Hackathon1 Chat Bot</h1>
+
+  <!-- Chat Icon -->
+  <div id="chat-icon">💬</div>
+
+  <!-- Chat Box -->
+  <div id="chat-box" class="hidden">
+    <div id="chat-header">Areesha 2.0 🤖</div>
+    <div id="messages"></div>
+
+    <!-- Input Area -->
+    <div id="input-area">
+      <input type="text" id="user-input" placeholder="Type a message...">
+      <button id="send-btn">Send</button>
+    </div>
+
+    <!-- Quick Buttons -->
+    <div id="button-area">
+      <button class="quick-btn" data-action="help">Help</button>
+      <button class="quick-btn" data-action="next">Next Step</button>
+      <button class="quick-btn" data-action="docs">Docs</button>
+    </div>
+  </div>
+
+  <script src="chat.js"></script>
+</body>
+</html>

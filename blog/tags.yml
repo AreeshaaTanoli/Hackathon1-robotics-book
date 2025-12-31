@@ -1,19 +1,24 @@
 facebook:
   label: Facebook
   permalink: /facebook
-  description: Facebook tag description
+  description: Articles and posts related to Facebook updates, tips, and community insights.
 
 hello:
   label: Hello
   permalink: /hello
-  description: Hello tag description
+  description: General greetings and introductory posts, perfect for newcomers and beginners.
 
 docusaurus:
   label: Docusaurus
   permalink: /docusaurus
-  description: Docusaurus tag description
+  description: Posts about Docusaurus, its features, plugins, and blogging best practices.
 
 hola:
   label: Hola
   permalink: /hola
-  description: Hola tag description
+  description: Fun and casual posts, designed to engage readers with light content and tips.
+
+ai:
+  label: AI
+  permalink: /ai
+  description: Posts about Artificial Intelligence, machine learning, automation, and modern AI trends.

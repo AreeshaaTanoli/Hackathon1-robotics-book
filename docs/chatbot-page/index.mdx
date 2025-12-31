@@ -1,0 +1,85 @@
+import React, { useEffect } from 'react';
+
+export const ChatBot = () => {
+  useEffect(() => {
+    const chatIcon = document.getElementById("chat-icon");
+    const chatBox = document.getElementById("chat-box");
+    const messagesDiv = document.getElementById("messages");
+    const userInput = document.getElementById("user-input");
+    const sendBtn = document.getElementById("send-btn");
+    const quickBtns = document.querySelectorAll(".quick-btn");
+
+    // Toggle chat box
+    chatIcon.addEventListener("click", () => chatBox.classList.toggle("hidden"));
+
+    async function sendMessage(message) {
+      const msgDiv = document.createElement("div");
+      msgDiv.classList.add("message", "user");
+      msgDiv.textContent = message;
+      messagesDiv.appendChild(msgDiv);
+
+      try {
+        const res = await fetch("http://127.0.0.1:8000/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message })
+        });
+        const data = await res.json();
+
+        const botDiv = document.createElement("div");
+        botDiv.classList.add("message", "bot");
+        botDiv.textContent = data.reply;
+        messagesDiv.appendChild(botDiv);
+      } catch {
+        const botDiv = document.createElement("div");
+        botDiv.classList.add("message", "bot");
+        botDiv.textContent = "Backend not connected!";
+        messagesDiv.appendChild(botDiv);
+      }
+    }
+
+    sendBtn.addEventListener("click", () => {
+      const msg = userInput.value.trim();
+      if (!msg) return;
+      userInput.value = "";
+      sendMessage(msg);
+    });
+
+    userInput.addEventListener("keypress", e => {
+      if (e.key === "Enter") sendBtn.click();
+    });
+
+    quickBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        let msg = "";
+        if (btn.dataset.action === "help") msg = "Please give me help for the current task.";
+        if (btn.dataset.action === "next") msg = "Give me the next step.";
+        if (btn.dataset.action === "docs") msg = "Show me relevant documentation.";
+        sendMessage(msg);
+      });
+    });
+
+  }, []);
+
+  return (
+    <div>
+      <div id="chat-icon">💬</div>
+      <div id="chat-box" className="hidden">
+        <div id="chat-header">Areesha 2.0 🤖</div>
+        <div id="messages"></div>
+        <div id="input-area">
+          <input type="text" id="user-input" placeholder="Type a message..." />
+          <button id="send-btn">Send</button>
+        </div>
+        <div id="button-area">
+          <button className="quick-btn" data-action="help">Help</button>
+          <button className="quick-btn" data-action="next">Next Step</button>
+          <button className="quick-btn" data-action="docs">Docs</button>
+        </div>
+      </div>
+      <link rel="stylesheet" href="/chat/style.css" />
+    </div>
+  );
+};
+
+<ChatBot />
