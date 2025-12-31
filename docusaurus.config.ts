@@ -11,14 +11,13 @@ const config: Config = {
     v4: true,
   },
 
-  // ← YOUR DETAILS HERE
-  url: 'https://YOUR_GITHUB_USERNAME.github.io',       // e.g., https://john123.github.io
-  baseUrl: '/YOUR_REPO_NAME/',                         // e.g., /robotics-book/   (add trailing /)
-                                                               // If repo is username.github.io, use baseUrl: '/'
+  // ✅ YOUR REAL DETAILS
+  url: 'https://areeshaatanoli.github.io',
+  baseUrl: '/Hackathon1-robotics-book/',
 
-  // GitHub Pages deployment
-  organizationName: 'YOUR_GITHUB_USERNAME',             // e.g., john123
-  projectName: 'YOUR_REPO_NAME',                       // e.g., robotics-book
+  // ✅ GitHub Pages deployment
+  organizationName: 'AreeshaaTanoli',
+  projectName: 'Hackathon1-robotics-book',
 
   onBrokenLinks: 'throw',
 
@@ -33,7 +32,8 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/tree/main/',
+          editUrl:
+            'https://github.com/AreeshaaTanoli/Hackathon1-robotics-book/tree/main/',
         },
         blog: {
           showReadingTime: true,
@@ -41,7 +41,8 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          editUrl: 'https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/tree/main/',
+          editUrl:
+            'https://github.com/AreeshaaTanoli/Hackathon1-robotics-book/tree/main/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -73,7 +74,7 @@ const config: Config = {
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME',
+          href: 'https://github.com/AreeshaaTanoli/Hackathon1-robotics-book',
           label: 'GitHub',
           position: 'right',
         },
@@ -117,7 +118,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME',
+              href: 'https://github.com/AreeshaaTanoli/Hackathon1-robotics-book',
             },
           ],
         },
